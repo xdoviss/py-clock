@@ -9,4 +9,6 @@ Simple python clock that also has a timer and a stopwatch.
 `start` starts the clock  
 `timer` starts timer based on your input after command (default alarm is Apple Radar)  
 `stopwatch` starts stop watch (Ctrl + C to stop)  
-`settings` takes you to clock settings
+`alarm` lets you set an alarm  
+`settings` takes you to clock settings  
+`Ctrl+C` takes you back to the menu (in stopwatch it stops the stopwatch)
