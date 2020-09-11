@@ -14,7 +14,6 @@ def clear():
 
 def startMsg():
 	print('Type "clock" to start the clock, "timer" to start timer, "stopwatch" to start stopwatch "settings" to change clock settings.')
-	print('[CURRENTLY CLOCK CANNOT BE STOPPED!]')
 
 def timer():
 	global ticks
