@@ -1,6 +1,7 @@
 import time
 import os
 import sys
+from sys import platform
 import winsound
 from datetime import datetime
 
@@ -10,7 +11,13 @@ ticks = 0
 timerLength = 5
 
 def clear():
-	os.system('cls')
+	if platform == 'linux' or platform == 'linux2':
+		os.system("echo 'clear'")
+	elif platform == 'darwin':
+		os.system("echo 'clear'")
+	else:
+		os.system('cls')
+
 
 def startMsg():
 	print('Type "clock" to start the clock, "timer" to start timer, "stopwatch" to start stopwatch "settings" to change clock settings.')
@@ -48,12 +55,13 @@ def clock():
 		clear()
 		print(datetime.now().strftime(dateParam))
 		time.sleep(1)
-
+			
 def settings():
 	global dateParam
 
 	print('1 - full date\n2 - hours, minutes, seconds\n3 - minutes, seconds')
 	inputOfSetting = input()
+
 	if inputOfSetting == '1':
 		system()
 	elif inputOfSetting == '2':
