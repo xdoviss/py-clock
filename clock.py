@@ -23,6 +23,7 @@ def startMsg():
 	print('Commands:\n"clock" to start the clock,\n"timer" to start timer,\n"stopwatch" to start stopwatch,\n"alarm" to set an alarm,\n"settings" to change clock settings.\n[Pressing Ctrl + C brings you back to this menu.]')
 
 def timer():
+	clear()
 	global ticks
 	timerHrs, timerMins, timerSecs = input('Input timer length separated by commas (hours, minutes, seconds): ').split(',')
 	timerLength = int(timerHrs) * 60 * 60 + int(timerMins) * 60 + int(timerSecs)
@@ -87,6 +88,7 @@ def clock():
 			system()
 			
 def settings():
+	clear()
 	global dateParam
 
 	print('1 - full date\n2 - hours, minutes, seconds\n3 - minutes, seconds')
