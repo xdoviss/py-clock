@@ -70,7 +70,7 @@ def timer():
 			clear()
 			system()
 	if int(ticks) == int(timerLength):
-		winsound.PlaySound('radarAlarm', winsound.SND_FILENAME)
+		winsound.PlaySound('radarAlarm.wav', winsound.SND_FILENAME)
 
 def alarm():
 	clear()
@@ -81,7 +81,7 @@ def alarm():
 		try:
 			if datetime.now().strftime('%H:%M') == alarmTime:
 				print('It is now: ' + alarmTime)
-				winsound.PlaySound('radarAlarm', winsound.SND_FILENAME)
+				winsound.PlaySound('radarAlarm.wav', winsound.SND_FILENAME)
 				break
 			else:
 				pass
