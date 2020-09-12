@@ -4,11 +4,41 @@ import sys
 from sys import platform
 import winsound
 from datetime import datetime
+import re
 
 x = 0
-dateParam = '%Y-%m-%d %H:%M:%S'
+dateParam = '%H %M %S'
 ticks = 0
 timerLength = 5
+
+block = [
+	['████', '█  █', '█  █', '█  █', '████'], #0
+	[' ██ ', '  █ ', '  █ ', '  █ ', ' ███'], #1
+	['████', '   █', '████', '█   ', '████'], #2
+	['████', '   █', '████', '   █', '████'], #3
+	['█  █', '█  █', '████', '   █', '   █'], #4
+	['████', '█   ', '████', '   █', '████'], #5
+	['████', '█   ', '████', '█  █', '████'], #6
+	['████', '   █', '   █', '   █', '   █'], #7
+	['████', '█  █', '████', '█  █', '████'], #8
+	['████', '█  █', '████', '   █', '████'] #9
+]
+
+colon = ['    ', ' █  ', '    ', ' █  ', '    ']
+
+def printTime():
+	theTime = datetime.now().strftime(dateParam)
+
+	def split(theTime):
+		return [char for char in theTime]
+
+	timeRn = split(theTime)
+
+	print(block[int(timeRn[0])][0] + ' ' + block[int(timeRn[1])][0] + ' ' + colon[0] + ' ' + block[int(timeRn[3])][0] + ' ' + block[int(timeRn[4])][0] + ' ' + colon [0] + ' ' + block[int(timeRn[6])][0] + ' ' + block[int(timeRn[7])][0])
+	print(block[int(timeRn[0])][1] + ' ' + block[int(timeRn[1])][1] + ' ' + colon[1] + ' ' + block[int(timeRn[3])][1] + ' ' + block[int(timeRn[4])][1] + ' ' + colon [1] + ' ' + block[int(timeRn[6])][1] + ' ' + block[int(timeRn[7])][1])
+	print(block[int(timeRn[0])][2] + ' ' + block[int(timeRn[1])][2] + ' ' + colon[2] + ' ' + block[int(timeRn[3])][2] + ' ' + block[int(timeRn[4])][2] + ' ' + colon [2] + ' ' + block[int(timeRn[6])][2] + ' ' + block[int(timeRn[7])][2])
+	print(block[int(timeRn[0])][3] + ' ' + block[int(timeRn[1])][3] + ' ' + colon[3] + ' ' + block[int(timeRn[3])][3] + ' ' + block[int(timeRn[4])][3] + ' ' + colon [3] + ' ' + block[int(timeRn[6])][3] + ' ' + block[int(timeRn[7])][3])
+	print(block[int(timeRn[0])][4] + ' ' + block[int(timeRn[1])][4] + ' ' + colon[4] + ' ' + block[int(timeRn[3])][4] + ' ' + block[int(timeRn[4])][4] + ' ' + colon [4] + ' ' + block[int(timeRn[6])][4] + ' ' + block[int(timeRn[7])][4])
 
 def clear():
 	if platform == 'linux' or platform == 'linux2':
@@ -78,10 +108,11 @@ def stopwatch():
 		system()
 
 def clock():
+	os.system('mode con: cols=40 lines=6')
 	while x == 0:
 		try:
 			clear()
-			print(datetime.now().strftime(dateParam))
+			printTime()
 			time.sleep(1)
 		except KeyboardInterrupt:
 			clear()
@@ -113,6 +144,7 @@ def settings():
 		system()
 
 def system():
+	os.system('mode con: cols=50 lines=8')
 	startMsg()
 	inputString = input()
 
