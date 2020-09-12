@@ -42,9 +42,9 @@ def printTime():
 
 def clear():
 	if platform == 'linux' or platform == 'linux2':
-		os.system("echo 'clear'")
+		os.system('clear')
 	elif platform == 'darwin':
-		os.system("echo 'clear'")
+		os.system('clear')
 	else:
 		os.system('cls')
 
@@ -108,7 +108,6 @@ def stopwatch():
 		system()
 
 def clock():
-	os.system('mode con: cols=40 lines=6')
 	while x == 0:
 		try:
 			clear()
