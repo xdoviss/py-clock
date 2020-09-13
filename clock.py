@@ -24,7 +24,40 @@ block = [
 	['████', '█  █', '████', '   █', '████'] #9
 ]
 
-colon = ['    ', ' █  ', '    ', ' █  ', '    ']
+line = [
+	['┏━━┓', '┃  ┃', '┃  ┃', '┃  ┃', '┗━━┛'],
+	[' ━┓ ', '  ┃ ', '  ┃ ', '  ┃ ', ' ━┻━'],
+	['┏━━┓', '   ┃', '┏━━┛', '┃   ', '┗━━━'],
+	['━━━┓', '   ┃', '━━━┫', '   ┃', '━━━┛'],
+	['╻  ╻', '┃  ┃', '┗━━┫', '   ┃', '   ╹'],
+	['┏━━━', '┃   ', '┗━━┓', '   ┃', '━━━┛'],
+	['┏━━┓', '┃   ', '┣━━┓', '┃  ┃', '┗━━┛'],
+	['━━━┓', '   ┃', '   ┃', '   ┃', '   ╹'],
+	['┏━━┓', '┃  ┃', '┣━━┫', '┃  ┃', '┗━━┛'],
+	['┏━━┓', '┃  ┃', '┗━━┫', '   ┃', '┗━━┛']
+]
+
+double = [
+	['╔══╗', '║  ║', '║  ║', '║  ║', '╚══╝'],
+	[' ═╗ ', '  ║ ', '  ║ ', '  ║ ', ' ═╩═'],
+	['╔══╗', '   ║', '╔══╝', '║   ', '╚═══'],
+	['═══╗', '   ║', '═══╣', '   ║', '═══╝'],
+	['║  ║', '║  ║', '╚══╣', '   ║', '   ║'],
+	['╔═══', '║   ', '╚══╗', '   ║', '═══╝'],
+	['╔══╗', '║   ', '╠══╗', '║  ║', '╚══╝'],
+	['═══╗', '   ║', '   ║', '   ║', '   ║'],
+	['╔══╗', '║  ║', '╠══╣', '║  ║', '╚══╝'],
+	['╔══╗', '║  ║', '╚══╣', '   ║', '╚══╝']
+]
+
+colon = [
+	['    ', ' █  ', '    ', ' █  ', '    '],
+	['    ', ' ┃  ', '    ', ' ┃  ', '    '],
+	['    ', ' ║  ', '    ', ' ║  ', '    ']
+]
+
+font = block
+clnFont = 0
 
 def printTime():
 	theTime = datetime.now().strftime(dateParam)
@@ -34,11 +67,11 @@ def printTime():
 
 	timeRn = split(theTime)
 
-	print(block[int(timeRn[0])][0] + ' ' + block[int(timeRn[1])][0] + ' ' + colon[0] + ' ' + block[int(timeRn[3])][0] + ' ' + block[int(timeRn[4])][0] + ' ' + colon [0] + ' ' + block[int(timeRn[6])][0] + ' ' + block[int(timeRn[7])][0])
-	print(block[int(timeRn[0])][1] + ' ' + block[int(timeRn[1])][1] + ' ' + colon[1] + ' ' + block[int(timeRn[3])][1] + ' ' + block[int(timeRn[4])][1] + ' ' + colon [1] + ' ' + block[int(timeRn[6])][1] + ' ' + block[int(timeRn[7])][1])
-	print(block[int(timeRn[0])][2] + ' ' + block[int(timeRn[1])][2] + ' ' + colon[2] + ' ' + block[int(timeRn[3])][2] + ' ' + block[int(timeRn[4])][2] + ' ' + colon [2] + ' ' + block[int(timeRn[6])][2] + ' ' + block[int(timeRn[7])][2])
-	print(block[int(timeRn[0])][3] + ' ' + block[int(timeRn[1])][3] + ' ' + colon[3] + ' ' + block[int(timeRn[3])][3] + ' ' + block[int(timeRn[4])][3] + ' ' + colon [3] + ' ' + block[int(timeRn[6])][3] + ' ' + block[int(timeRn[7])][3])
-	print(block[int(timeRn[0])][4] + ' ' + block[int(timeRn[1])][4] + ' ' + colon[4] + ' ' + block[int(timeRn[3])][4] + ' ' + block[int(timeRn[4])][4] + ' ' + colon [4] + ' ' + block[int(timeRn[6])][4] + ' ' + block[int(timeRn[7])][4])
+	print(font[int(timeRn[0])][0] + ' ' + font[int(timeRn[1])][0] + ' ' + colon[clnFont][0] + ' ' + font[int(timeRn[3])][0] + ' ' + font[int(timeRn[4])][0] + ' ' + colon[clnFont][0] + ' ' + font[int(timeRn[6])][0] + ' ' + font[int(timeRn[7])][0])
+	print(font[int(timeRn[0])][1] + ' ' + font[int(timeRn[1])][1] + ' ' + colon[clnFont][1] + ' ' + font[int(timeRn[3])][1] + ' ' + font[int(timeRn[4])][1] + ' ' + colon[clnFont][1] + ' ' + font[int(timeRn[6])][1] + ' ' + font[int(timeRn[7])][1])
+	print(font[int(timeRn[0])][2] + ' ' + font[int(timeRn[1])][2] + ' ' + colon[clnFont][2] + ' ' + font[int(timeRn[3])][2] + ' ' + font[int(timeRn[4])][2] + ' ' + colon[clnFont][2] + ' ' + font[int(timeRn[6])][2] + ' ' + font[int(timeRn[7])][2])
+	print(font[int(timeRn[0])][3] + ' ' + font[int(timeRn[1])][3] + ' ' + colon[clnFont][3] + ' ' + font[int(timeRn[3])][3] + ' ' + font[int(timeRn[4])][3] + ' ' + colon[clnFont][3] + ' ' + font[int(timeRn[6])][3] + ' ' + font[int(timeRn[7])][3])
+	print(font[int(timeRn[0])][4] + ' ' + font[int(timeRn[1])][4] + ' ' + colon[clnFont][4] + ' ' + font[int(timeRn[3])][4] + ' ' + font[int(timeRn[4])][4] + ' ' + colon[clnFont][4] + ' ' + font[int(timeRn[6])][4] + ' ' + font[int(timeRn[7])][4])
 
 def clear():
 	if platform == 'linux' or platform == 'linux2':
@@ -50,7 +83,7 @@ def clear():
 
 
 def startMsg():
-	print('Commands:\n"clock" to start the clock,\n"timer" to start timer,\n"stopwatch" to start stopwatch,\n"alarm" to set an alarm,\n"settings" to change clock settings.\n[Pressing Ctrl + C brings you back to this menu.]')
+	print('Commands:\n"clock" to start the clock,\n"timer" to start timer,\n"stopwatch" to start stopwatch,\n"alarm" to set an alarm,\n"fonts" to change clock font.\n[Pressing Ctrl + C brings you back to this menu.]')
 
 def timer():
 	clear()
@@ -117,29 +150,31 @@ def clock():
 			clear()
 			system()
 			
-def settings():
+def fonts():
 	clear()
-	global dateParam
+	global font
+	global clnFont
+	print('1 - block █\n2 - line ┃\n3 - double ║')
+	inputOfFont = input()
 
-	print('1 - full date\n2 - hours, minutes, seconds\n3 - minutes, seconds')
-	inputOfSetting = input()
-
-	if inputOfSetting == '1':
+	if inputOfFont == '1':
+		font = block
+		clnFont = 0
 		clear()
 		system()
-	elif inputOfSetting == '2':
-		dateParam = '%H:%M:%S'
+	elif inputOfFont == '2':
+		font = line
+		clnFont = 1
 		clear()
 		system()
-	elif inputOfSetting == '3':
-		dateParam = '%M:%S'
-		clear()
-		system()
-	elif KeyboardInterrupt:
+	elif inputOfFont == '3':
+		font = double
+		clnFont = 2
 		clear()
 		system()
 	else:
 		print('Invalid Input.')
+		clear()
 		system()
 
 def system():
@@ -149,8 +184,8 @@ def system():
 
 	if inputString == 'clock':
 		clock()
-	elif inputString == 'settings':
-		settings()
+	elif inputString == 'fonts':
+		fonts()
 	elif inputString == 'timer':
 		timer()
 	elif inputString == 'stopwatch':
